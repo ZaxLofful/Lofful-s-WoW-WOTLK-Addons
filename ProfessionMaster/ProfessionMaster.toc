@@ -1,0 +1,14 @@
+## Author: Esperanza - Everlook/EU-Alliance
+## Interface: 30400
+## Title: Profession Master |cffDA8CFF[PM]
+## Notes: See your professions, those of your guild and those of your friends.
+## Notes-deDE: Siehe deine Berufe, die deiner Gilde und die deiner Freunde ein.
+## Version: 1.5.3
+## SavedVariables: Professions, OwnProfessions, SyncTimes, Settings, Logs, CharacterSets, BucketList, Guildmates
+## SavedVariablesPerCharacter: Frames, CharacterSettings
+
+ProfessionMaster.lua
+models\models.xml
+models\messages\messages.xml
+services\services.xml
+views\views.xml

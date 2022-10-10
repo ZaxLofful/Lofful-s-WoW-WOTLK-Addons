@@ -1,0 +1,7 @@
+## Title: AutoProfit
+## Interface: 11302
+## Version: 4.0.0
+## SavedVariables: autoProfit_AutoSell, autoProfit_Silent
+## SavedVariablesPerCharacter: autoProfit_Exceptions
+## Notes: Automatically sells low quality gray items to the vendor.
+AutoProfit.lua

@@ -1,0 +1,78 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.blizzard.com/wow/ui/">
+
+	<Script file="StoryTellerEditFrame.lua" />
+
+	<Frame name="StoryTellerEditFrame" inherits="StoryTellerDialogTemplate" mixin="StoryTellerEditFrameMixin" parent="UIParent" toplevel="true" enableMouse="true" movable="true" hidden="true" clampedtoscreen="true">
+
+		<Scripts>
+			<OnLoad inherit="prepend" method="OnLoad" />
+		</Scripts>
+
+		<Size x="480" y="640" />
+
+		<Anchors>
+			<Anchor point="CENTER" x="0" y="0" />
+		</Anchors>
+
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="StoryTellerEditFrameTitle" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-15" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			<Button name="StoryTellerEditFrameClearButton" inherits="UIPanelButtonTemplate">
+				<Size x="60" y="20" />
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="-10" y="-10" relativePoint="TOPRIGHT" />
+				</Anchors>
+			</Button>
+
+			<Button name="StoryTellerEditFrameCancelButton" inherits="UIPanelButtonTemplate">
+				<Size x="100" y="20" />
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" x="10" y="10" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+			</Button>
+
+			<Button name="StoryTellerEditFrameSaveButton" inherits="UIPanelButtonTemplate">
+				<Size x="100" y="20" />
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-10" y="10" relativePoint="BOTTOMRIGHT" />
+				</Anchors>
+			</Button>
+
+			<ScrollFrame name="StoryTellerEditFrameScrollFrame" inherits="UIPanelScrollFrameTemplate">
+				<Size x="428" y="570" />
+				<Anchors>
+					<Anchor point="TOPLEFT" x="15" y="-35" relativePoint="TOPLEFT" />
+				</Anchors>
+
+				<ScrollChild>
+					<EditBox name="StoryTellerEditFrameText" multiLine="true" autoFocus="false" countInvisibleLetters="false">
+						<Size x="428" y="570" />
+						<FontString inherits="GameFontHighlightSmall" />
+					</EditBox>
+				</ScrollChild>
+			</ScrollFrame>
+
+			<Frame name="StoryTellerEditFrameTextBackground" inherits="StoryTellerEditBoxBackdropTemplate">
+				<Size x="460" y="580" />
+				<Anchors>
+					<Anchor point="TOP" y="-30" relativePoint="TOP" />
+				</Anchors>
+			</Frame>
+
+		</Frames>
+	</Frame>
+</Ui>

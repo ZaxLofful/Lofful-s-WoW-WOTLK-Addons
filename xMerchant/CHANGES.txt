@@ -1,0 +1,10 @@
+tag 29a3fd9ca79af8302713cf08c92f90150a562f1e 1.9.6-release-wotlk
+Author:	doneykoo <doneykoo@gmail.com>
+Date:	Sun Oct 9 01:51:19 2022 +0800
+
+commit 49a01698b2af32c96f40a028522504d66c2e6a48
+Author: doneykoo <doneykoo@gmail.com>
+Date:   Wed Oct 5 02:24:08 2022 +0800
+
+    ver 1.9.6, toc update for wotlk
+
