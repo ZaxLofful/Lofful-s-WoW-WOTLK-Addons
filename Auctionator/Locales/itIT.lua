@@ -17,6 +17,8 @@ L["AUCTION_TOOLTIP_TOOLTIP_HEADER"] = "Tooltip Informazioni Aste"
 L["AUCTION_TOOLTIP_TOOLTIP_TEXT"] = "Mostra informazioni asta nel tooltip al passaggio del mouse."
 L["AUCTIONATOR"] = "Auctionator"
 L["AUTHOR_HEADER"] = "Autore"
+--[[Translation missing --]]
+L["BID_EXISTING_ON_OWNED_AUCTION"] = "Someone has bid on this auction so cancelling will cost you your deposit and:"
 L["BID_ONLY_AVAILABLE"] = "disponibile solo l'offerta"
 L["BID_PRICE"] = "Prezzo Offerta"
 L["BIDDER"] = "Offerente"
@@ -78,6 +80,12 @@ L["CONFIG_CHAT_LOG_TOOLTIP_TEXT"] = "Se questa opzione non è spuntata le tue as
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT"] = "Mostra profitto invece che costo dei reagenti"
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT_TOOLTIP_HEADER"] = "Costo Reagenti Mostra Profitto"
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT_TOOLTIP_TEXT"] = "Quando la Casa d'Aste è aperta la finestra di creazione mostrerà il costo per la creazione di un'oggetto. Abilita questa opzione per mostrare l'eventuale profitto."
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW"] = "Show crafting costs in the crafting view"
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW_TOOLTIP_HEADER"] = "Crafting screen extra info"
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW_TOOLTIP_TEXT"] = "The crafting screen will show the cost of crafting an item. Disable this option to not show the crafting costs."
 L["CONFIG_DEBUG"] = "Attiva/disattiva l'output di debug."
 L["CONFIG_DEBUG_TOOLTIP_HEADER"] = "Auctionator Debug"
 L["CONFIG_DEBUG_TOOLTIP_TEXT"] = "Usato dagli sviluppatori per visualizzare messaggi di debug in chat."
@@ -87,6 +95,8 @@ L["CONFIG_ENCHANT_TOOLTIP"] = "Mostra tooltip per incantamenti (solo per Legion,
 L["CONFIG_FULL_SCAN_STEP_SIZE"] = "Dimensione voci scansione completa"
 L["CONFIG_LIFO_CATEGORY"] = "Vendita"
 L["CONFIG_MAIL_TOOLTIP"] = "Visualizza il tooltips della casella postale."
+--[[Translation missing --]]
+L["CONFIG_MILL_TOOLTIP"] = "Show mill value for herbs from inscription in tooltips"
 L["CONFIG_NOT_LIFO_CATEGORY"] = "Equipaggiamento/Mascotte"
 L["CONFIG_PET_TOOLTIP"] = "Mostra tooltip Mascotte"
 L["CONFIG_PROFILE_CATEGORY"] = "Profilo"
@@ -176,6 +186,8 @@ L["COPY_NO_LIST_SELECTED"] = "Non posso copiare l'oggetto. Nessuna lista della s
 L["COPY_TEXT_HEADER"] = "Copia Testo"
 L["COPY_TO_LIST"] = "Copia l'oggetto nella lista della spesa attiva"
 L["CRAFTED_LEVEL"] = "Livello di creazione"
+--[[Translation missing --]]
+L["CRAFTING_INFO"] = "Crafting Info"
 L["CREATE"] = "Crea"
 L["CREATE_LIST_DIALOG"] = "Inserisci il nome di una nuova shopping list:"
 L["CURRENT"] = "Attuale"
@@ -254,6 +266,12 @@ L["MAIL_TOOLTIP_TOOLTIP_HEADER"] = "Tooltips Cassetta Postale"
 L["MAIL_TOOLTIP_TOOLTIP_TEXT"] = "Visualizza le informazioni di Auctionator per gli oggetti nella casetta postale al passaggio del mouse."
 L["MAX"] = "Max"
 L["MAX_COLON_X"] = "Max: %s"
+--[[Translation missing --]]
+L["MILL"] = "Mill"
+--[[Translation missing --]]
+L["MILL_TOOLTIP_TOOLTIP_HEADER"] = "Mill Tooltip Information"
+--[[Translation missing --]]
+L["MILL_TOOLTIP_TOOLTIP_TEXT"] = "Show inscription milling estimated value in tooltip on mouseover."
 L["MIN"] = "Min"
 L["MONTH_1"] = "Gennaio"
 L["MONTH_10"] = "Ottobre"
@@ -336,8 +354,7 @@ L["SHIFT_LEFT_CLICK"] = "Shift Clic Sinistro"
 L["SHIFT_RIGHT_CLICK"] = "Shift Clic Destro"
 L["SHOPPING_LIST"] = "Lista della Spesa"
 L["SHOPPING_TAB"] = "Acquista"
---[[Translation missing --]]
-L["SHOPPING_TAB_HEADER_2"] = "Auctionator - Shopping"
+L["SHOPPING_TAB_HEADER_2"] = "Auctionator - Acquista"
 L["SKIP"] = "Salta"
 L["SORT"] = "Ordina"
 L["SPLASH_830_BUGS_1"] = "Unisciti a noi nel server Discord di Auctionator %s"

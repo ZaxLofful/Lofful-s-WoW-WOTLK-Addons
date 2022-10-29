@@ -2,11 +2,14 @@ StoryTellerButton = LibStub("AceAddon-3.0"):NewAddon("StoryTellerButton")
 
 local icon = LibStub("LibDBIcon-1.0")
 
+local BUTTON_ICON = "Interface\\Icons\\Inv_misc_book_08"
+local BUTTON_TEXT = "StoryTeller"
+
 function StoryTellerButton.Init()
 	local storyTellerLDB = LibStub("LibDataBroker-1.1"):NewDataObject("StoryTeller", {
 		type = "launcher",
-		text = "StoryTeller",
-		icon = "Interface\\Icons\\Inv_misc_book_08",
+		text = BUTTON_TEXT,
+		icon = BUTTON_ICON,
 		OnClick = StoryTellerButton.OnClick,
 		OnEnter = StoryTellerButton.ShowTooltip,
 		OnLeave = StoryTellerButton.HideTooltip
@@ -14,6 +17,30 @@ function StoryTellerButton.Init()
 
 	-- Create button
 	icon:Register("StoryTeller", storyTellerLDB, StoryTeller_CharacterSettings.minimap)
+
+	-- Add background texture to fill the gap of the thinner WoW 10.0 minimap button border
+	if LE_EXPANSION_LEVEL_CURRENT >= 9 then
+		local buttonFrame = icon:GetMinimapButton("StoryTeller")
+		local backdropMask = buttonFrame:CreateMaskTexture(nil, "BACKGROUND", nil, -7)
+		backdropMask:SetTexture(130925)
+		backdropMask:SetPoint("BOTTOMRIGHT", -1, 2)
+		backdropMask:SetPoint("TOPLEFT", 4, -3)
+		local backdrop = buttonFrame:CreateTexture(nil, "BACKGROUND", nil, -7)
+		backdrop:AddMaskTexture(backdropMask)
+		backdrop:SetAllPoints(backdropMask)
+		backdrop:SetColorTexture(0, 0, 0, 1)
+	end
+
+	-- Register add-on on the minimap
+	if AddonCompartmentFrame then
+		AddonCompartmentFrame:RegisterAddon({
+			notCheckable = true,
+			text = BUTTON_TEXT,
+			icon = BUTTON_ICON,
+			registerForRightClick = true,
+			func = function(self, _, _, _, button) StoryTellerButton.OnClick(nil, button) end
+		})
+	end
 end
 
 function StoryTellerButton.OnClick(self, button)

@@ -1,6 +1,108 @@
 local  _, CLM = ...
 CLM.ChangelogData = {
     {
+        version = "v2.5.5",
+        data = {
+            {
+                name = "Locale",
+                data = {
+                    { header = "Chinese", body = "CLM now supports Chinese locale. Thanks brian#0179 for all the translations." },
+                },
+            },
+            {
+                name = "Fixes",
+                data = {
+                    { header = "Item values", body = "Bows and Crossbows should now properly be calculated as ranged weapons." },
+                    { header = "Vickrey award value", body = "Vickrey should now properly calculate second value based on the type of the selected bid." },
+                    { header = "Sorting fixes", body = "Sorting by version should now work as expected." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.5.4",
+        data = {
+            {
+                name = "Changes",
+                data = {
+                    { header = "GUI", body = "GUI revamp. Thanks brian#0179 for contribution." },
+                    { header = "Auctioning", body = "Auctioning and upgraded item info should now work properly for tokens and Sapphiron quest item." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.5.3",
+        data = {
+            {
+                name = "Hotfixes",
+                data = {
+                    { header = "Open Auction", body = "Open auction hotfixes." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.5.2",
+        data = {
+            {
+                name = "Hotfixes",
+                data = {
+                    { header = "Open Auction", body = "Open auction hotfixes." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.5.1",
+        data = {
+            {
+                name = "Fixes",
+                data = {
+                    { header = "Chat command bidding", body = "Chat command bidding should now work." },
+                    { header = "Chat command os bid", body = "You can now do OS bid through chat command |cff4ee44!bidos|r." },
+                    { header = "Auto-update bid values", body = "Auto-update bid values should work with new UI."},
+                    { header = "Bidding UI", body = "Bidding UI no longer needs Okay button. This however results in buttons being misplaced with some ElvUI scales." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.5.0",
+        data = {
+            {
+                name = "Features",
+                data = {
+                    { header = "Open Auction", body = "Open Auction modes just got overhauled. You will now see list of bidders in bidding UI. Information is limited in anonymous mode. It is strongly recommended for all raiders to upgrade to this version." },
+                    { header = "Auctioning UI", body = "Auctioning UI got simplified a bit. Checking player upgrades should now be easier." },
+                    { header = "Bid posting", body = "Upgrades will now be posted together with bids." },
+                },
+            },
+            {
+                name = "Fixes",
+                data = {
+                    { header = "Boss kill bonus", body = "Boss kill bonus should work now for EoE/OS/VoA. Additionaly it can be set to negative value. 0 is still ignored." },
+                    { header = "Pass in open auctions", body = "In non-ascending auctions pass won't be grayed out anymore after bidding." },
+                },
+            },
+        },
+    },
+    {
+        version = "v2.4.1",
+        data = {
+            {
+                name = "Fixes",
+                data = {
+                    { header = "RCLC Integration", body = "RCLC Integration now displays PR in the RCLC window." },
+                    { header = "UI Scaling", body = "You can now scale UI through slider in the configuration. Bidding UI scales separately by Ctrl + Mouse Wheel." },
+                    { header = "Standings display", body = "Points in standings tooltip now are displayed in the proper order." },
+                    { header = "Attendance sorting", body = "Sorting by attendance works now as expected." },
+                    { header = "Passing", body = "You can now pass in Open Tiered and Static modes."}
+                },
+            },
+        },
+    },
+    {
         version = "v2.4.0",
         data = {
             {

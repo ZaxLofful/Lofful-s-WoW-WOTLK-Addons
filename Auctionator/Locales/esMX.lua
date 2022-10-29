@@ -19,6 +19,8 @@ L["AUCTION_TOOLTIP_TOOLTIP_TEXT"] = "Mostrar información sobre herramientas de 
 L["AUCTIONATOR"] = "Auctionator"
 L["AUTHOR_HEADER"] = "Autor"
 --[[Translation missing --]]
+L["BID_EXISTING_ON_OWNED_AUCTION"] = "Someone has bid on this auction so cancelling will cost you your deposit and:"
+--[[Translation missing --]]
 L["BID_ONLY_AVAILABLE"] = "bid only available"
 L["BID_PRICE"] = "Precio de pujar"
 L["BIDDER"] = "Licitador"
@@ -81,6 +83,12 @@ L["CONFIG_CHAT_LOG_TOOLTIP_TEXT"] = "Si esta opción está desactivada, sus suba
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT"] = "Muestra ganancias en lugar de costos de fabricación"
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT_TOOLTIP_HEADER"] = "Costos de fabricación Mostrar ganancias"
 L["CONFIG_CRAFTING_COST_SHOW_PROFIT_TOOLTIP_TEXT"] = "Cuando la Casa de Subastas está abierta, la pantalla de fabricación mostrará el costo de fabricar un objeto. Habilita esta opción para mostrar la ganancia en su lugar."
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW"] = "Show crafting costs in the crafting view"
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW_TOOLTIP_HEADER"] = "Crafting screen extra info"
+--[[Translation missing --]]
+L["CONFIG_CRAFTING_INFO_SHOW_TOOLTIP_TEXT"] = "The crafting screen will show the cost of crafting an item. Disable this option to not show the crafting costs."
 L["CONFIG_DEBUG"] = "Alternar salida de depuración."
 L["CONFIG_DEBUG_TOOLTIP_HEADER"] = "Depurar Actionator"
 L["CONFIG_DEBUG_TOOLTIP_TEXT"] = "Esto es usado por los mantenedores para enviar mensajes de depuración al marco del chat."
@@ -90,6 +98,8 @@ L["CONFIG_ENCHANT_TOOLTIP"] = "Mostrar información sobre herramientas de encant
 L["CONFIG_FULL_SCAN_STEP_SIZE"] = "Tamaño de paso de escaneo completo"
 L["CONFIG_LIFO_CATEGORY"] = "Vendiendo"
 L["CONFIG_MAIL_TOOLTIP"] = "Mostrar información sobre herramientas del buzón"
+--[[Translation missing --]]
+L["CONFIG_MILL_TOOLTIP"] = "Show mill value for herbs from inscription in tooltips"
 L["CONFIG_NOT_LIFO_CATEGORY"] = "Equipo/Mascotas"
 L["CONFIG_PET_TOOLTIP"] = "Mostrar información sobre herramientas de mascotas"
 L["CONFIG_PROFILE_CATEGORY"] = "Perfil"
@@ -201,6 +211,8 @@ L["COPY_NO_LIST_SELECTED"] = "No se puede copiar el objeto. No se ha seleccionad
 L["COPY_TEXT_HEADER"] = "Copiar texto"
 L["COPY_TO_LIST"] = "Copiar objeto a la lista de compras activa"
 L["CRAFTED_LEVEL"] = "Nivel de crafteo"
+--[[Translation missing --]]
+L["CRAFTING_INFO"] = "Crafting Info"
 L["CREATE"] = "Crear"
 L["CREATE_LIST_DIALOG"] = "Ingrese el nombre de la nueva lista de compras:"
 L["CURRENT"] = "Actual"
@@ -288,6 +300,12 @@ L["MAIL_TOOLTIP_TOOLTIP_TEXT"] = [=[Muestra información del Auctionator para lo
 ]=]
 L["MAX"] = "Máximo"
 L["MAX_COLON_X"] = "Máx: %s"
+--[[Translation missing --]]
+L["MILL"] = "Mill"
+--[[Translation missing --]]
+L["MILL_TOOLTIP_TOOLTIP_HEADER"] = "Mill Tooltip Information"
+--[[Translation missing --]]
+L["MILL_TOOLTIP_TOOLTIP_TEXT"] = "Show inscription milling estimated value in tooltip on mouseover."
 L["MIN"] = "Minimo"
 L["MONTH_1"] = "Enero"
 L["MONTH_10"] = "Octubre"

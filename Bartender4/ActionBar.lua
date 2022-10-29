@@ -89,14 +89,17 @@ function ActionBar:UpdateButtonConfig()
 	self.buttonConfig.hideElements.macro = self.config.hidemacrotext and true or false
 	self.buttonConfig.hideElements.hotkey = self.config.hidehotkey and true or false
 	self.buttonConfig.hideElements.equipped = self.config.hideequipped and true or false
+	self.buttonConfig.hideElements.border = (self.config.hideborder or self.config.skin.Zoom) and true or false
 
 	self.buttonConfig.showGrid = self.config.showgrid
 	self.buttonConfig.clickOnDown = Bartender4.db.profile.onkeydown
 	self.buttonConfig.flyoutDirection = self.config.flyoutDirection
 
-	if tonumber(self.id) == 1 then
+	self.buttonConfig.keyBoundClickButton = "Keybind"
+
+	if self.bindingmapping then
 		for i, button in self:GetAll() do
-			self.buttonConfig.keyBoundTarget = format("ACTIONBUTTON%d", i)
+			self.buttonConfig.keyBoundTarget = self.bindingmapping:format(i)
 			button:UpdateConfig(self.buttonConfig)
 		end
 	else
@@ -108,6 +111,7 @@ function ActionBar:UpdateButtonConfig()
 	self:UpdateSelfCast()
 	-- button lock
 	self:ForAll("SetAttribute", "buttonlock", Bartender4.db.profile.buttonlock)
+	self:ForAll("SetAttribute", "unlockedpreventdrag", true)
 	-- update state
 	self:ForAll("UpdateState")
 end
@@ -240,7 +244,7 @@ function ActionBar:UpdateButtons(numbuttons, offset)
 			buttons[i] = LAB10:CreateButton(absid, format("BT4Button%d", absid), self, nil)
 		end
 		local offsetid = (i + offset - 1) % 12 + 1
-		for k = 1,14 do
+		for k = 1,18 do
 			buttons[i]:SetState(k, "action", (k - 1) * 12 + offsetid)
 		end
 		buttons[i]:SetState(0, "action", (self.id - 1) * 12 + offsetid)
@@ -254,6 +258,9 @@ function ActionBar:UpdateButtons(numbuttons, offset)
 		if i == 12 then
 			buttons[i]:SetState(11, "custom", customExitButton)
 			buttons[i]:SetState(12, "custom", customExitButton)
+			buttons[i]:SetState(16, "custom", customExitButton)
+			buttons[i]:SetState(17, "custom", customExitButton)
+			buttons[i]:SetState(18, "custom", customExitButton)
 		end
 	end
 

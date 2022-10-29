@@ -8,6 +8,7 @@
   <Include file="Config\Manifest.xml"/>
   <Include file="Enchant\Manifest.xml"/>
   <Include file="Prospect\Manifest.xml"/>
+  <Include file="Mill\Manifest.xml"/>
   <Include file="Search\Manifest.xml" />
   <Include file="Variables\Manifest.xml" />
   <Include file="Core\Manifest.xml" />
@@ -16,8 +17,7 @@
   <Include file="API\Manifest.xml"/>
   <Include file="FullScan\Manifest.xml"/>
   <Include file="Selling\Manifest.xml"/>
-  <Include file="ReagentSearch\Manifest.xml"/>
-  <Include file="CraftSearch\Manifest.xml"/>
+  <Include file="CraftingInfo\Manifest.xml"/>
 
   <Include file="Initialize\Manifest.xml"/>
 </Ui>

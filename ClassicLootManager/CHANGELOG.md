@@ -1,3 +1,65 @@
+# Classic Loot Manager v2.5.5
+## Locale
+### Chinese
+CLM now supports Chinese locale. Thanks brian#0179 for all the translations.
+## Fixes
+### Item values
+Bows and Crossbows should now properly be calculated as ranged weapons.
+### Vickrey award value
+Vickrey should now properly calculate second value based on the type of the selected bid.
+### Sorting fixes
+Sorting by version should now work as expected.
+
+# Classic Loot Manager v2.5.4
+## Changes
+### GUI
+GUI revamp. Thanks brian#0179 for contribution.
+### Auctioning
+Auctioning and upgraded item info should now work properly for tokens and Sapphiron quest item.
+# Classic Loot Manager v2.5.3
+## Hotfixes
+### Open Auction
+Open auction hotfixes.
+# Classic Loot Manager v2.5.2
+## Hotfixes
+### Open Auction
+Open auction hotfixes.
+# Classic Loot Manager v2.5.1
+## Fixes
+### Chat command bidding
+Chat command bidding should now work.
+### Chat command os bid
+You can now do OS bid through chat command `!bidos`.
+### Auto-update bid values
+Auto-update bid values should work with new UI.
+### Bidding UI
+Bidding UI no longer needs Okay button. This however results in buttons being misplaced with some ElvUI scales.
+# Classic Loot Manager v2.5.0
+## Features
+### Open Auction
+Open Auction modes just got overhauled. You will now see list of bidders in bidding UI. Information is limited in anonymous mode. It is strongly recommended for all raiders to upgrade to this version.
+### Auctioning UI
+Auctioning UI got simplified a bit. Checking player upgrades should now be easier.
+### Bid posting
+Upgrades will now be posted together with bids.
+## Fixes
+### Boss kill bonus
+Boss kill bonus should work now for EoE/OS/VoA. Additionaly it can be set to negative value. 0 is still ignored.
+### Pass in open auctions
+In non-ascending auctions pass won't be grayed out anymore after bidding.
+
+# Classic Loot Manager v2.4.1
+## Fixes
+### RCLC Integration
+RCLC Integration now displays PR in the RCLC window.
+### UI Scaling
+You can now scale UI through slider in the configuration. Bidding UI scales separately by Ctrl + Mouse Wheel.
+### Standings display
+Points in standings tooltip now are displayed in the proper order.
+### Attendance sorting
+Sorting by attendance works now as expected.
+### Passing
+You can now pass in Open Tiered and Static modes.
 # Classic Loot Manager v2.4.0
 ## Features
 ### Manual GP Awarding

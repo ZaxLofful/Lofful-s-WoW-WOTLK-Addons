@@ -2,8 +2,6 @@ local _, CLM = ...
 
 local LOG = CLM.LOG
 local CONSTANTS = CLM.CONSTANTS
-
-CLM.UTILS = {}
 local UTILS = CLM.UTILS
 
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0")
@@ -31,17 +29,17 @@ local classOrdered = {
 }
 
 local classColors = {
-    ["deathknight"] = { r = 0.77, g = 0.12, b = 0.23, hex = "C41E3A" },
-    ["druid"]   = { r = 1,    g = 0.49, b = 0.04, hex = "FF7D0A" },
-    ["hunter"]  = { r = 0.67, g = 0.83, b = 0.45, hex = "ABD473" },
-    ["mage"]    = { r = 0.25, g = 0.78, b = 0.92, hex = "40C7EB" },
-    ["priest"]  = { r = 1,    g = 1,    b = 1,    hex = "FFFFFF" },
-    ["rogue"]   = { r = 1,    g = 0.96, b = 0.41, hex = "FFF569" },
-    ["shaman"]  = { r = 0.01, g = 0.44, b = 0.87, hex = "0270DD" },
-    ["paladin"] = { r = 0.96, g = 0.55, b = 0.73, hex = "F58CBA" },
-    ["warlock"] = { r = 0.53, g = 0.53, b = 0.93, hex = "8787ED" },
-    ["warrior"] = { r = 0.78, g = 0.61, b = 0.43, hex = "C79C6E" },
-    ["death knight"] = { r = 0.77, g = 0.12, b = 0.23, hex = "C41E3A" }
+    ["deathknight"]     = { a = 1, r = 0.77, g = 0.12, b = 0.23, hex = "C41E3A" },
+    ["druid"]           = { a = 1, r = 1,    g = 0.49, b = 0.04, hex = "FF7D0A" },
+    ["hunter"]          = { a = 1, r = 0.67, g = 0.83, b = 0.45, hex = "ABD473" },
+    ["mage"]            = { a = 1, r = 0.25, g = 0.78, b = 0.92, hex = "40C7EB" },
+    ["priest"]          = { a = 1, r = 1,    g = 1,    b = 1,    hex = "FFFFFF" },
+    ["rogue"]           = { a = 1, r = 1,    g = 0.96, b = 0.41, hex = "FFF569" },
+    ["shaman"]          = { a = 1, r = 0.01, g = 0.44, b = 0.87, hex = "0270DD" },
+    ["paladin"]         = { a = 1, r = 0.96, g = 0.55, b = 0.73, hex = "F58CBA" },
+    ["warlock"]         = { a = 1, r = 0.53, g = 0.53, b = 0.93, hex = "8787ED" },
+    ["warrior"]         = { a = 1, r = 0.78, g = 0.61, b = 0.43, hex = "C79C6E" },
+    ["death knight"]    = { a = 1, r = 0.77, g = 0.12, b = 0.23, hex = "C41E3A" }
 }
 
 function UTILS.GetClassColor(className)
@@ -67,6 +65,10 @@ do
 end
 function UTILS.GetColorCodedClassList()
     return colorCodedClassList
+end
+
+function UTILS.GetClassList()
+    return classOrdered
 end
 
 function UTILS.ColorCodeByPercentage(percentage)
@@ -607,6 +609,20 @@ function UTILS.LibStModifierFn(a1, b1)
     return RemoveColorCode(a1), RemoveColorCode(b1)
 end
 
+function UTILS.LibStModifierFnNumber(a1, b1)
+    return (tonumber(RemoveColorCode(a1)) or 0), (tonumber(RemoveColorCode(b1)) or 0)
+end
+
+-- Convert version string to number for comparision (e.g., "v2.5.4" to "20504")
+function UTILS.VersionStringToNumber(s)
+    local version = UTILS.ParseVersionString(s)
+    return version.major*10000 + version.minor*100 + version.patch
+end
+
+function UTILS.LibStModifierFnVersion(a1, b1)
+    return UTILS.VersionStringToNumber(a1), UTILS.VersionStringToNumber(b1)
+end
+
 function UTILS.LibStClickHandler(st, dropdownMenu, rowFrame, cellFrame, data, cols, row, realrow, column, table, button, ...)
     local leftClick = (button == "LeftButton")
     local rightClick = (button == "RightButton")
@@ -670,6 +686,35 @@ function UTILS.LibStSingleSelectClickHandler(st, dropdownMenu, rowFrame, cellFra
     if dropdownMenu and rightClick then
         UTILS.LibDD:CloseDropDownMenus()
         UTILS.LibDD:ToggleDropDownMenu(1, nil, dropdownMenu, cellFrame, -20, 0)
+    end
+end
+
+function UTILS.LibStItemCellUpdate(rowFrame, frame, data, cols, row, realrow, column, fShow, table, ...)
+    local itemId = data[realrow].cols[column].value
+    local _, _, _, _, icon = GetItemInfoInstant(itemId or 0)
+    if icon then
+        frame:SetNormalTexture(icon)
+        frame:Show()
+        frame:SetScript("OnEnter", function()
+            GameTooltip:SetOwner(rowFrame, "ANCHOR_RIGHT")
+            GameTooltip:SetHyperlink("item:" .. tostring(itemId))
+            GameTooltip:Show()
+        end)
+        frame:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    else
+        frame:Hide()
+    end
+end
+
+function UTILS.LibStClassCellUpdate(rowFrame, frame, data, cols, row, realrow, column, fShow, table, ...)
+    local class = data[realrow].cols[column].value
+    if class then
+        frame:SetNormalTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-CHARACTERCREATE-CLASSES") -- this is the image containing all class icons
+        local coords = CLASS_ICON_TCOORDS[class]
+        frame:GetNormalTexture():SetTexCoord(unpack(coords))
+        frame:Show()
+    else
+        frame:Hide()
     end
 end
 
@@ -749,6 +794,20 @@ end
 function UTILS.DictNotEmpty(dict)
     return not rawequal(next(dict), nil)
 end
+
+function UTILS.ResizeFrame(frame, up, scale)
+    if up then
+        scale = scale + 0.1
+        if scale > 2 then scale = 2 end
+    else
+        scale = scale - 0.1
+        if scale < 0.5 then scale = 0.5 end
+    end
+    frame:SetScale(scale)
+    return scale
+end
+
+
 
 CONSTANTS.ITEM_QUALITY = {
     [0] = ColorCodeText(CLM.L["Poor"], "9d9d9d"),

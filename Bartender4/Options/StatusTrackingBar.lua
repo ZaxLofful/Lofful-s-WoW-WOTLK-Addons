@@ -26,6 +26,7 @@ function StatusBarMod:SetupOptions()
 			get = function() return self.db.profile.enabled end,
 			set = "ToggleModule",
 			handler = self,
+			width = "full",
 		}
 		self.optionobject:AddElement("general", "enabled", enabled)
 
@@ -66,7 +67,7 @@ function StatusBarMod:SetupOptions()
 			order = 100,
 			type = "group",
 			name = L["Status Tracking Bar"],
-			desc = L["Configure the Status Tracking Bar"],
+			desc = L["The Status Tracking Bar combines XP/Reputation/Honor into one bar, stacking up to two tracked elements"],
 			childGroups = "tab",
 		}
 		Bartender4:RegisterBarOptions("Status", self.options)

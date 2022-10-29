@@ -7,13 +7,29 @@ local function SearchItem(text)
     StackSplitFrame:Hide()
   end)
 
-  local name = Auctionator.Utilities.GetNameFromLink(text)
+  -- Borrowed from Blizzard ChatEdit_InsertLink to avoid inserting textures with
+  -- DF reagent links
+  local name;
+  if ( strfind(text, "battlepet:") ) then
+    local petName = strmatch(text, "%[(.+)%]");
+    name = petName;
+  elseif ( strfind(text, "item:", 1, true) ) then
+    name = GetItemInfo(text);
+  end
+  if not name then
+    name = text
+  end
 
   if name == nil then
     name = text
   end
 
-  AuctionatorShoppingFrame.OneItemSearchBox:SetText("\"" .. name .. "\"")
+  -- Non-exact with enchants as the name doesn't match exactly
+  if text:match("enchant:") then
+    AuctionatorShoppingFrame.OneItemSearchBox:SetText(name)
+  else
+    AuctionatorShoppingFrame.OneItemSearchBox:SetText("\"" .. name .. "\"")
+  end
   AuctionatorShoppingFrame.OneItemSearchButton:Click()
 
   return true

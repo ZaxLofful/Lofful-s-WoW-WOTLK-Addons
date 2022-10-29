@@ -22,6 +22,7 @@ function ExtraActionBarMod:SetupOptions()
 			get = function() return self.db.profile.enabled end,
 			set = "ToggleModule",
 			handler = self,
+			width = "full",
 		}
 		self.optionobject:AddElement("general", "enabled", enabled)
 
@@ -50,10 +51,10 @@ function ExtraActionBarMod:SetupOptions()
 			order = 30,
 			type = "group",
 			name = L["Extra Action Bar"],
-			desc = L["Configure the Extra Action Bar"],
+			desc = L["Manages the Extra Action Button used in many quests and encounters, as well as Zone specific abilities"],
 			childGroups = "tab",
 		}
-		Bartender4:RegisterBarOptions("ExtraActionBar", self.options)
+		Bartender4:RegisterActionBarOptions("ExtraActionBar", self.options)
 	end
 	self.options.args = self:IsEnabled() and self.optionobject.table or self.disabledoptions
 end
